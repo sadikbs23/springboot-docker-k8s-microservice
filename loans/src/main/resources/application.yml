@@ -15,3 +15,22 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  config:
+    import:
+     - "application_test.yml"
+     - "application_prod.yml"
+  profiles:
+    active:
+      - "test"
+
+build:
+  version: "3.0"
+
+loans:
+  message: "Welcome to BS23 Bank loans related local APIs "
+  contactDetails:
+    name: "Sadik - Developer"
+    email: "sadik@bs23.com"
+  onCallSupport:
+    - (452) 456-2176
+    - (546) 764-8934

@@ -103,7 +103,7 @@
 				<version>3.4.4</version>
 				<configuration>
 					<to>
-						<image>sadikbs23/${project.artifactId}:latest</image>
+						<image>sadikbs23/${project.artifactId}:s6</image>
 					</to>
 				</configuration>
 			</plugin>

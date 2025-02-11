@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: "test"
+build:
+  version: "2.0"
+
+accounts:
+  message: "Welcome to BS23 Bank accounts related Test APIs "
+  contactDetails:
+    name: "Riz Doe - QA"
+    email: "riz@bs23.com"
+  onCallSupport:
+    - (555)555-3234
+    - (555)523-4345

@@ -1,0 +1,16 @@
+spring:
+  config:
+    activate:
+      on-profile: "test"
+
+build:
+  version: "2.0"
+
+loans:
+  message: "Welcome to BS23 Bank loans related Test APIs "
+  contactDetails:
+    name: "Ahmed - QA Lead"
+    email: "ahmed@eazybank.com"
+  onCallSupport:
+    - (785) 545-6565
+    - (853) 546-3467

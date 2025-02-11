@@ -1,0 +1,15 @@
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to BS23 Bank accounts related prod APIs "
+  contactDetails:
+    name: "Sadik Hassan - Product Owner"
+    email: "sadik@bs23.com"
+  onCallSupport:
+    - (555)555-3334
+    - (555)523-4443
