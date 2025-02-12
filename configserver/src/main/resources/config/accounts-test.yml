@@ -1,7 +1,3 @@
-spring:
-  config:
-    activate:
-      on-profile: "test"
 build:
   version: "2.0"
 

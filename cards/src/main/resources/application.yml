@@ -2,6 +2,10 @@ server:
   port: 9000
 
 spring:
+  application:
+    name: "cards"
+  profiles:
+    active: "test"
   datasource:
     url: jdbc:h2:mem:testDb
     username: sadik
@@ -16,21 +20,4 @@ spring:
       ddl-auto: update
     show-sql: true
   config:
-    import:
-      - "application_test.yml"
-      - "application_prod.yml"
-  profiles:
-    active:
-      - "test"
-
-build:
-  version: "3.0"
-
-cards:
-  message: "Welcome to BS23 Bank cards related local APIs"
-  contactDetails:
-    name: "Sadik - Developer"
-    email: "sadik@bs23.com"
-  onCallSupport:
-      - (412) 419-3491
-      - (915) 382-1932
+    import: "optional:configserver:http://localhost:8071/"
