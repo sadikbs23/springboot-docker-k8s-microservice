@@ -51,7 +51,9 @@ public class GatewayserverApplication {
                         .filters(f -> f.rewritePath("/bsbank/cards/(?<segment>.*)", "/${segment}")
                                 .addResponseHeader("X-Response-Time", LocalDateTime.now().toString())
                                 .circuitBreaker(c -> c.setName("cardsCircuitBreaker")
-                                        .setFallbackUri("forward:/contactSupport")))
+                                        .setFallbackUri("forward:/contactSupport"))
+                                .requestRateLimiter(config -> config.setRateLimiter(redisRateLimiter())
+                                        .setKeyResolver(userKeyResolver())))
                         .uri("lb://CARDS")).build();
 
     }
