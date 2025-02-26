@@ -44,6 +44,9 @@ management:
   info:
     env:
       enabled: true
+  metrics:
+    tags:
+      application: ${spring.application.name}
 
 eureka:
   instance:
@@ -64,6 +67,8 @@ logging:
     com:
       bs23:
         accounts: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name}],%X{traceId},%X{spanId}"
 
 resilience4j.circuitbreaker:
   configs:

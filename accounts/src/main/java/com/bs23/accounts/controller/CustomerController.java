@@ -59,8 +59,9 @@ public class CustomerController {
                                                                    String correlationId,
                                                                    @RequestParam @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
                                                                    String mobileNumber) {
-        logger.debug("BSBank-correlation-id found in RequestTraceFilter : {}", correlationId);
+        logger.debug("fetchCustomerDetails method invoked");
         CustomerDetailsDto customerDetailsDto = iCustomersService.fetchCustomerDetails(mobileNumber, correlationId);
+        logger.debug("fetchCustomerDetails method completed");
         return ResponseEntity.status(HttpStatus.SC_OK).body(customerDetailsDto);
 
     }
