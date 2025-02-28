@@ -23,7 +23,6 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: "http://localhost:7080/realms/master/protocol/openid-connect/certs"
-
 management:
   endpoints:
     web:
@@ -42,22 +41,16 @@ management:
 info:
   app:
     name: "gatewayserver"
-    description: "BS23 Gateway Server Application"
+    description: "Gateway Server Application"
     version: "1.0.0"
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    fetchRegistry: true
-    registerWithEureka: true
-    serviceUrl:
-      defaultZone: http://localhost:8070/eureka/
 
 logging:
   level:
     com:
-      bs23:
+      eazybytes:
         gatewayserver: DEBUG
+  pattern:
+    level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
 
 resilience4j.circuitbreaker:
   configs:
